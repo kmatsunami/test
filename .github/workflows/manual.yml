@@ -26,6 +26,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: run checkout
+      run: |
+        echo "run git checkout ${{ github.event.inputs.name }}"
+        git checkout ${{ github.event.inputs.name }}
     - name: Send greeting modified
       run: echo "Hello ${{ github.event.inputs.name }} 1"
     - name: Send greeting again

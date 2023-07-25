@@ -13,4 +13,3 @@ gantt
     another task      : 24d
 ```
 
-test

@@ -1,0 +1,14 @@
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  tag:
+    runs-on: ubuntu-20.04
+    outputs:
+      version: ${{ steps.ref_tag.outputs.version }}
+    steps:
+      - name: Set tag version
+        id: ref_tag
+        run: echo "::set-output name=version::${GITHUB_REF##*v}"

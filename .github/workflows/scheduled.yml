@@ -7,7 +7,7 @@ on:
 jobs:
   deploy_dev:
     secrets: inherit
-    uses: ./.github/workflows/call_only.yml
+    uses: ./.github/workflows/call-only.yml
     with:
       project: "biz_product_rdb"
       environment: "dev-staging"

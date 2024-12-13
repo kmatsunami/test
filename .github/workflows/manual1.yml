@@ -22,5 +22,5 @@ jobs:
   manual1:
     uses: ./.github/workflows/call-only.yml
     with:
-      project: "hoge"
-      environment: "new-staging"
+      project:  ${{ github.event.inputs.project }}
+      environment:  ${{ github.event.inputs.environment }}

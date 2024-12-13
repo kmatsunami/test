@@ -1,0 +1,26 @@
+
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        type: choice
+        description: dbt project
+        required: true
+        options:
+          - "biz_product_rdb"
+      environment:
+        type: choice
+        description: dbt target
+        required: true
+        options:
+          - "dev-staging"
+          - "dev-release"
+
+
+jobs:
+  manual1:
+    uses: ./.github/workflows/call-only.yml
+    with:
+      project: "hoge"
+      environment: "new-staging"

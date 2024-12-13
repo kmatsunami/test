@@ -1,0 +1,20 @@
+on:
+  workflow_call:
+    inputs:
+      project:
+        type: string
+        description: dbt project
+        required: true
+      environment:
+        type: string
+        description: dbt target
+        required: true
+    #secrets: inherit
+
+jobs:
+  call-only:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo inputs
+        run: |
+          echo "Project: ${{ github.event.inputs.project }}, Environment: ${{ github.event.inputs.environment }}"

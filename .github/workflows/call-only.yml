@@ -16,9 +16,11 @@ env:
 jobs:
   call-only:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     steps:
       - name: Echo inputs
         run: |
           echo "Project: ${{ inputs.project }}"
           echo "Environment: ${{ inputs.environment }}"
           echo "MY_ENV_VAR: ${{ env.MY_ENV_VAR }}"
+          echo "MY_SECRET_PASSWORD: ${{ secrets.MY_SECRET_PASSWORD }}"

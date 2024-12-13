@@ -10,4 +10,4 @@ jobs:
     uses: ./.github/workflows/call-only.yml
     with:
       project: "biz_product_rdb"
-      environment: "dev-staging"
+      environment: "dev"

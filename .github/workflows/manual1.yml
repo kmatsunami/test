@@ -11,11 +11,11 @@ on:
           - "biz_product_rdb"
       environment:
         type: choice
-        description: dbt target
+        description: target environment
         required: true
         options:
-          - "dev-staging"
-          - "dev-release"
+          - "dev"
+          - "prd"
 
 
 jobs:

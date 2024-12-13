@@ -21,6 +21,7 @@ on:
 jobs:
   manual1:
     uses: ./.github/workflows/call-only.yml
+    secrets: inherit
     with:
       project:  ${{ github.event.inputs.project }}
       environment:  ${{ github.event.inputs.environment }}

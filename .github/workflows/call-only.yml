@@ -9,7 +9,6 @@ on:
         type: string
         description: dbt target
         required: true
-    #secrets: inherit
 
 jobs:
   call-only:

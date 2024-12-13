@@ -1,0 +1,13 @@
+name: Scheduled build
+
+on:
+  schedule:
+    - cron: '0,10,20,30 * * * *'
+
+jobs:
+  deploy_dev:
+    secrets: inherit
+    uses: ./.github/workflows/call_only.yml
+    with:
+      project: "biz_product_rdb"
+      environment: "dev-staging"
